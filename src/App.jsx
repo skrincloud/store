@@ -1,44 +1,29 @@
-import { readItems } from '@directus/sdk';
-import { useState } from 'react';
+import { readMe } from '@directus/sdk';
+import { useEffect, useState } from 'react';
+import Home from './pages/Home/index.jsx';
+import Login from './pages/Login/index.jsx';
 import { client } from './server/index.js';
 
 import './App.css';
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const [user, setUser] = useState(null);
 
-  async function onClick() {
-    const email = '...';
-    const password = '...';
-    await client.login(email, password);
+  useEffect(() => {
+    client.request(readMe())
+      .then((user) => setUser(user))
+      .catch(() => setUser({}));
+  }, []);
 
-    const items = await client.request(readItems('products'));
-
-    setProducts(items);
+  if (user === null) {
+    return <div> Cargando... </div>;
   }
 
-  return (
-    <>
-      <h1>Store</h1>
-      <div className="card">
-        <button onClick={onClick}>
-          Accionar
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+  if (user && user.id) {
+    return <Home />;
+  }
 
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </ul>
-    </>
-  )
+  return <Login />;
 }
 
 export default App
