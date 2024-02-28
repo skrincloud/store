@@ -1,16 +1,22 @@
 import { useState } from 'react';
 import { client } from '../../server';
+import { readMe } from '@directus/sdk';
 
-function Login() {
+function Login(props) {
+  const { setUser } = props;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function onLogin(event) {
+  async function onLogin(event) {
     event.preventDefault();
 
-    client.login(email, password)
-      .then((user) => console.log(user))
-      .catch((error) => console.error(error));
+    try {
+      await client.login(email, password)
+      const user = await client.request(readMe())
+      setUser(user);
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   function buildOnChange(setter) {

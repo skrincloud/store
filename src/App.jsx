@@ -23,7 +23,7 @@ function App() {
     return <Home />;
   }
 
-  return <Login />;
+  return <Login setUser={setUser} />;
 }
 
 export default App
