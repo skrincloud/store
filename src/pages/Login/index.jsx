@@ -3,7 +3,7 @@ import { useState } from "react";
 import Field from "../../components/Field/index.jsx";
 import { client } from "../../server";
 
-import "./login.css";
+import "./Login.css";
 
 function Login(props) {
   const { setUser } = props;
