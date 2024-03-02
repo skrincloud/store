@@ -1,0 +1,46 @@
+.Field__logo {
+  fill: #fff;
+  padding: 0.8rem 0.5rem;
+}
+
+.Field {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.Field--focus {
+  background-color: #21262e;
+}
+
+.Field__input {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  z-index: 1;
+}
+
+.Field__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Field__label {
+  position: absolute;
+  left: 0;
+  color: #6e7075;
+  transition: transform 0.3s;
+  z-index: 0;
+}
+
+.Field--focus .Field__input {
+  transform: translateY(7px);
+}
+
+.Field--focus .Field__label {
+  transform: translateY(-10px);
+  font-size: 12px;
+}
