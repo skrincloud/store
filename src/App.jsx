@@ -1,16 +1,17 @@
-import { readMe } from '@directus/sdk';
-import { useEffect, useState } from 'react';
-import Home from './pages/Home/index.jsx';
-import Login from './pages/Login/index.jsx';
-import { client } from './server/index.js';
+import { readMe } from "@directus/sdk";
+import { useEffect, useState } from "react";
+import Home from "./pages/Home/index.jsx";
+import Login from "./pages/Login/index.jsx";
+import { client } from "./server/index.js";
 
-import './App.css';
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    client.request(readMe())
+    client
+      .request(readMe())
       .then((user) => setUser(user))
       .catch(() => setUser({}));
   }, []);
@@ -26,4 +27,4 @@ function App() {
   return <Login setUser={setUser} />;
 }
 
-export default App
+export default App;
