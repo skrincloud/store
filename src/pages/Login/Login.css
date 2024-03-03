@@ -1,5 +1,4 @@
 .Login {
-  color: #ffffff;
   display: grid;
   min-height: 100vh;
   place-content: center;
@@ -7,48 +6,53 @@
 
 .Login-title {
   margin: 0;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: var(--font-size-headline);
+  font-weight: var(--font-weight-bold);
 }
 
 .Login-subtitle {
-  padding: 1rem 0;
-  margin-bottom: 2rem;
+  padding: var(--size-normal) 0;
+  margin-bottom: var(--size-large);
 }
 
 .Login-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--size-normal);
 }
 
 .Login-form-button {
-  background-color: #2ecda7;
-  color: var(--theme-background);
-  font-weight: 700;
+  background-color: var(--theme-primary-color);
+  color: var(--theme-background-color);
+  font-weight: var(--font-weight-bold);
   border: none;
   width: 100%;
-  padding: 10px;
-  border-radius: 6px;
+  padding: var(--size-small);
+  border-radius: var(--border-radius-normal);
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: var(--size-normal);
   text-transform: uppercase;
 }
 
+.Login-form-button:hover {
+  opacity: 0.8;
+  transition: var(--transition-normal);
+}
+
 .Login-form-forgot {
-  padding-top: 5px;
+  padding-top: var(--size-pixel-tiny);
   text-align: center;
-  font-size: 12px;
-  color: #2ecda7;
+  font-size: var(--font-size-caption);
+  color: var(--theme-primary-color);
 }
 
 .Login-form-register {
-  padding-top: 4rem;
-  font-size: 12px;
+  padding-top: var(--size-huge);
+  font-size: var(--font-size-caption);
   text-align: center;
 }
 
 .Login-form-register span {
-  color: #2ecda7;
-  font-weight: 700;
+  color: var(--theme-primary-color);
+  font-weight: var(--font-weight-bold);
 }

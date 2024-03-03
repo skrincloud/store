@@ -1,27 +1,17 @@
-.Field__logo {
-  color: white;
-  padding: 0.8rem 0.5rem;
-}
-
 .Field {
   display: flex;
   align-items: center;
-  border-radius: 6px;
+  border-radius: var(--border-radius-normal);
+  transition: var(--transition-normal);
 }
 
 .Field--focus {
-  background-color: #21262e;
+  background-color: var(--theme-surface-color);
+  transition: var(--transition-slow);
 }
 
-.Field__input {
-  position: relative;
-  background-color: transparent;
-  padding-right: 0.5rem;
-  border: none;
-  outline: none;
-  color: #fff;
-  z-index: 1;
-  transition: transform 0.3s;
+.Field__logo {
+  padding: var(--size-small) var(--size-tiny);
 }
 
 .Field__container {
@@ -34,16 +24,27 @@
 .Field__label {
   position: absolute;
   left: 0;
-  color: #6e7075;
-  transition: transform 0.3s;
+  color: var(--theme-hint-color);
+  transition: var(--transition-normal);
   z-index: 0;
 }
 
-.Field--focus .Field__input {
-  transform: translateY(7px);
+.Field__input {
+  position: relative;
+  background-color: transparent;
+  padding-right: var(--size-tiny);
+  border: none;
+  outline: none;
+  color: var(--theme-font-color);
+  z-index: 1;
+  transition: var(--transition-normal);
 }
 
 .Field--focus .Field__label {
+  font-size: var(--font-size-caption);
   transform: translateY(-10px);
-  font-size: 12px;
+}
+
+.Field--focus .Field__input {
+  transform: translateY(8px);
 }
