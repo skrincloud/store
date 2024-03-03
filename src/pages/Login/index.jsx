@@ -1,7 +1,7 @@
 import { readMe } from '@directus/sdk'
 import { useState } from 'react'
-import Field from '../../components/Field'
 import { client } from '../../api'
+import Field from '../../components/Field'
 
 import './Login.css'
 

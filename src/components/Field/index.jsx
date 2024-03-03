@@ -1,3 +1,4 @@
+import classnames from 'classnames'
 import { useState } from 'react'
 
 import './Field.css'
@@ -5,7 +6,7 @@ import './Field.css'
 function Field(props) {
   const [focus, setFocus] = useState(false)
   const { name, value, onChange, label, type } = props
-  const className = `Field${focus ? ' Field--focus' : ''}`
+  const className = classnames('Field', { 'Field--focus': focus })
 
   return (
     <div className={className}>

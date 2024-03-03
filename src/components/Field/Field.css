@@ -16,6 +16,7 @@
 .Field__input {
   position: relative;
   background-color: transparent;
+  padding-right: 0.5rem;
   border: none;
   outline: none;
   color: #fff;

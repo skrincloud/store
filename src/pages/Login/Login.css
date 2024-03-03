@@ -24,7 +24,7 @@
 
 .Login-form-button {
   background-color: #2ecda7;
-  color: #000000;
+  color: var(--theme-background);
   font-weight: bold;
   border: none;
   width: 100%;
@@ -32,6 +32,7 @@
   border-radius: 6px;
   cursor: pointer;
   margin-top: 1rem;
+  text-transform: uppercase;
 }
 
 .Login-form-forgot {
