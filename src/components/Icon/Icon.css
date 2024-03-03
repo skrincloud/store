@@ -1,0 +1,23 @@
+.Icon {
+  color: var(--theme-font-color);
+}
+
+.Icon--primary {
+  color: var(--theme-primary-color);
+}
+
+.Icon--background {
+  color: var(--theme-background-color);
+}
+
+.Icon--surface {
+  color: var(--theme-surface-color);
+}
+
+.Icon--font {
+  color: var(--theme-font-color);
+}
+
+.Icon--hint {
+  color: var(--theme-hint-color);
+}

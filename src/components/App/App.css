@@ -17,17 +17,52 @@
 }
 
 :root {
-  --theme-background: #0d1117;
+  --theme-primary-color: #2ecda7;
+  --theme-background-color: #0d1117;
+  --theme-surface-color: #21262e;
+  --theme-font-color: #f4f4f4;
+  --theme-hint-color: #6e7075;
+
+  --size-tiny: 0.5rem;
+  --size-small: 0.8rem;
+  --size-normal: 1rem;
+  --size-large: 2rem;
+  --size-huge: 4rem;
+
+  --size-pixel-tiny: 4px;
+  --size-pixel-small: 8px;
+  --size-pixel-normal: 12px;
+  --size-pixel-large: 16px;
+  --size-pixel-huge: 20px;
+
+  --size-icon-small: 16px;
+  --size-icon-normal: 24px;
+
+  --border-radius-normal: var(--size-pixel-small);
+
+  --font-size-caption: 12px;
+  --font-size-normal: 14px;
+  --font-size-subtitle: 18px;
+  --font-size-headline: 24px;
+
+  --font-weight-thin: 100;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --transition-normal: all 300ms ease-in-out;
+  --transition-slow: all 600ms ease-in-out;
+  --transition-slower: all 1000ms ease-in-out;
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: var(--theme-background);
+  background-color: var(--theme-background-color);
+  color: var(--theme-font-color);
   color-scheme: dark;
 }
 
 body,
 input,
 button {
-  font-size: 14px;
+  font-size: var(--font-size-normal);
 }
