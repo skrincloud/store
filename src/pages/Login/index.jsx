@@ -1,13 +1,15 @@
 import { readMe } from '@directus/sdk'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { client } from '../../api'
+import { storage } from '../../api/storage'
 import Field from '../../components/Field'
 import ExpandedLayout from '../../layouts/ExpandedLayout'
 
 import './Login.css'
 
-function Login(props) {
-  const { setUser } = props
+function Login() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -16,8 +18,8 @@ function Login(props) {
 
     try {
       await client.login(email, password)
-      const user = await client.request(readMe())
-      setUser(user)
+      await client.request(readMe())
+      navigate('/')
     } catch (error) {
       console.error(error)
     }
@@ -28,6 +30,14 @@ function Login(props) {
       setter(event?.target?.value)
     }
   }
+
+  useEffect(() => {
+    const { access_token: token } = storage.get() || {}
+
+    if (token) {
+      navigate('/')
+    }
+  }, [navigate])
 
   return (
     <ExpandedLayout centered>
