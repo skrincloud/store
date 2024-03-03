@@ -41,16 +41,18 @@ function Login(props) {
         <Field
           name="email"
           value={email}
-          onChange={buildOnChange(setEmail)}
-          label="Correo"
           type="email"
+          icon="email"
+          label="Correo"
+          onChange={buildOnChange(setEmail)}
         />
         <Field
           name="password"
           value={password}
-          onChange={buildOnChange(setPassword)}
-          label="Contraseña"
           type="password"
+          icon="lock"
+          label="Contraseña"
+          onChange={buildOnChange(setPassword)}
         />
 
         <button type="submit" onClick={onLogin} className="Login-form-button">
