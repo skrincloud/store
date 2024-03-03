@@ -1,36 +1,38 @@
 .Login {
   color: #ffffff;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
 }
 
 .Login-title {
   margin: 0;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .Login-subtitle {
-  margin: 0;
-  font-size: 13px;
-  margin-bottom: 3rem;
-  padding-top: 6px;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .Login-form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .Login-form-button {
   background-color: #2ecda7;
-  color: #000000;
-  font-weight: bold;
+  color: var(--theme-background);
+  font-weight: 700;
   border: none;
   width: 100%;
   padding: 10px;
   border-radius: 6px;
-  font-size: 14px;
-  cursor: po;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-transform: uppercase;
 }
 
 .Login-form-forgot {
@@ -40,13 +42,13 @@
   color: #2ecda7;
 }
 
-.Login-form-register span {
-  color: #2ecda7;
-  font-weight: bold;
-}
-
 .Login-form-register {
   padding-top: 4rem;
   font-size: 12px;
   text-align: center;
+}
+
+.Login-form-register span {
+  color: #2ecda7;
+  font-weight: 700;
 }
