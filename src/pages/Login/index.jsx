@@ -1,7 +1,7 @@
 import { readMe } from '@directus/sdk'
 import { useState } from 'react'
-import Field from '../../components/Field/index.jsx'
-import { client } from '../../server'
+import Field from '../../components/Field'
+import { client } from '../../api'
 
 import './Login.css'
 
@@ -31,7 +31,7 @@ function Login(props) {
   return (
     <div className="Login">
       <div>
-        <p className="Login-title">Iniciar sesión</p>
+        <h2 className="Login-title">Iniciar sesión</h2>
         <p className="Login-subtitle">
           Por favor, inicie sesión para continuar
         </p>

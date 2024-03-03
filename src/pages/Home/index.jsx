@@ -1,6 +1,6 @@
 import { readItems } from '@directus/sdk'
 import { useEffect, useState } from 'react'
-import { client } from '../../server'
+import { client } from '../../api'
 
 function Home() {
   const [products, setProducts] = useState([])

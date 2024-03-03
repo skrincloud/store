@@ -1,10 +1,11 @@
 import { useState } from 'react'
+
 import './Field.css'
 
 function Field(props) {
   const [focus, setFocus] = useState(false)
   const { name, value, onChange, label, type } = props
-  const className = `Field ${focus ? 'Field--focus' : ''}`
+  const className = `Field${focus ? ' Field--focus' : ''}`
 
   return (
     <div className={className}>
@@ -24,8 +25,9 @@ function Field(props) {
         )}
         <input
           type={type}
-          value={value}
           name={name}
+          value={value}
+          title={label}
           className="Field__input"
           onChange={onChange}
           onFocus={() => setFocus(true)}

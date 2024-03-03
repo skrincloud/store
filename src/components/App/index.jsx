@@ -1,8 +1,8 @@
 import { readMe } from '@directus/sdk'
 import { useEffect, useState } from 'react'
-import Home from './pages/Home/index.jsx'
-import Login from './pages/Login/index.jsx'
-import { client } from './server/index.js'
+import { client } from '../../api'
+import Home from '../../pages/Home'
+import Login from '../../pages/Login'
 
 import './App.css'
 
