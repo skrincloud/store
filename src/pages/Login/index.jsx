@@ -1,31 +1,31 @@
-import { readMe } from "@directus/sdk";
-import { useState } from "react";
-import Field from "../../components/Field/index.jsx";
-import { client } from "../../server";
+import { readMe } from '@directus/sdk'
+import { useState } from 'react'
+import Field from '../../components/Field/index.jsx'
+import { client } from '../../server'
 
-import "./Login.css";
+import './Login.css'
 
 function Login(props) {
-  const { setUser } = props;
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { setUser } = props
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   async function onLogin(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     try {
-      await client.login(email, password);
-      const user = await client.request(readMe());
-      setUser(user);
+      await client.login(email, password)
+      const user = await client.request(readMe())
+      setUser(user)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   }
 
   function buildOnChange(setter) {
     return (event) => {
-      setter(event?.target?.value);
-    };
+      setter(event?.target?.value)
+    }
   }
 
   return (
@@ -66,7 +66,7 @@ function Login(props) {
         ¿No tienes cuenta?&nbsp;<span>Contáctanos</span>
       </p>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

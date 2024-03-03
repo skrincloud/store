@@ -1,9 +1,10 @@
-import { useState } from "react";
-import "./Field.css";
+import { useState } from 'react'
+import './Field.css'
+
 function Field(props) {
-  const [focus, setFocus] = useState(false);
-  const { name, value, onChange, label, type } = props;
-  const className = `Field ${focus ? "Field--focus" : ""}`;
+  const [focus, setFocus] = useState(false)
+  const { name, value, onChange, label, type } = props
+  const className = `Field ${focus ? 'Field--focus' : ''}`
 
   return (
     <div className={className}>
@@ -18,7 +19,7 @@ function Field(props) {
         </svg>
       </div>
       <div className="Field__container">
-        {(value == "" || focus) && (
+        {(value == '' || focus) && (
           <label className="Field__label">{label}</label>
         )}
         <input
@@ -32,7 +33,7 @@ function Field(props) {
         />
       </div>
     </div>
-  );
+  )
 }
 
-export default Field;
+export default Field

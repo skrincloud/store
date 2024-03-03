@@ -1,10 +1,10 @@
 //@ts-check
 
-import { createDirectus, rest, authentication } from '@directus/sdk';
-import { storage } from './storage';
+import { createDirectus, rest, authentication } from '@directus/sdk'
+import { storage } from './storage'
 
-const url = 'https://store.itmarck.com';
+const url = 'https://store.itmarck.com'
 
 export const client = createDirectus(url)
   .with(authentication('json', { storage }))
-  .with(rest());
+  .with(rest())
