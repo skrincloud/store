@@ -1,7 +1,7 @@
 .Login {
-  display: grid;
-  min-height: 100vh;
-  place-content: center;
+  width: 100%;
+  max-width: 24rem;
+  padding: var(--size-large);
 }
 
 .Login-title {

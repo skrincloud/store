@@ -1,5 +1,8 @@
 .Icon {
   color: var(--theme-font-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Icon--primary {
