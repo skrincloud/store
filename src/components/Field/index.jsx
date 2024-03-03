@@ -1,5 +1,6 @@
 import classnames from 'classnames'
 import { useState } from 'react'
+import Icon from '../Icon'
 
 import './Field.css'
 
@@ -7,16 +8,13 @@ function Field(props) {
   const [focus, setFocus] = useState(false)
   const { name, value, onChange, label, type, icon } = props
   const className = classnames('Field', { 'Field--focus': focus })
+  const showLabel = value === '' || focus
 
   return (
     <div className={className}>
-      <div className="Field__logo">
-        <span className="material-symbols-rounded">{icon}</span>
-      </div>
+      <Icon className="Field__logo" name={icon} />
       <div className="Field__container">
-        {(value == '' || focus) && (
-          <label className="Field__label">{label}</label>
-        )}
+        {showLabel && <label className="Field__label">{label}</label>}
         <input
           type={type}
           name={name}
