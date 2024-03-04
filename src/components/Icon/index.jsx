@@ -10,7 +10,7 @@ function Icon(props) {
   const classNames = classnames('Icon', className, colorClass)
 
   return (
-    <div className={classNames}>
+    <div className={classNames} role="img" title="Icono pequeño">
       <span className="material-symbols-rounded">{name}</span>
     </div>
   )

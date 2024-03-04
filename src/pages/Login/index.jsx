@@ -52,18 +52,18 @@ function Login() {
         <form className="Login-form">
           <Field
             name="email"
-            value={email}
             type="email"
             icon="email"
             label="Correo"
+            defaultValue={email}
             onChange={buildOnChange(setEmail)}
           />
           <Field
             name="password"
-            value={password}
             type="password"
             icon="lock"
             label="Contraseña"
+            defaultValue={password}
             onChange={buildOnChange(setPassword)}
           />
 
