@@ -5,10 +5,18 @@ import Icon from '../Icon'
 import './Field.css'
 
 function Field(props) {
+  const { name, defaultValue, onChange, label, type, icon } = props
+  const [value, setValue] = useState(defaultValue)
   const [focus, setFocus] = useState(false)
-  const { name, value, onChange, label, type, icon } = props
   const className = classnames('Field', { 'Field--focus': focus })
-  const showLabel = value === '' || focus
+  const showLabel = value == '' || focus
+
+  function onInputChange(event) {
+    if (typeof onChange === 'function') {
+      onChange(event.target.value)
+    }
+    setValue(event.target.value)
+  }
 
   return (
     <div className={className} role="group">
@@ -18,10 +26,10 @@ function Field(props) {
         <input
           type={type}
           name={name}
-          value={value}
           title={label}
+          defaultValue={defaultValue}
           className="Field__input"
-          onChange={onChange}
+          onChange={onInputChange}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
         />
