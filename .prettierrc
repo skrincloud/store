@@ -4,5 +4,13 @@
   "endOfLine": "lf",
   "printWidth": 80,
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.test.{js,jsx}",
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
 }
