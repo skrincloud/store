@@ -11,7 +11,9 @@ function Icon(props) {
 
   return (
     <div className={classNames} role="img" title="Icono pequeño">
-      <span className="material-symbols-rounded">{name}</span>
+      <span className="material-symbols-rounded" translate="no">
+        {name}
+      </span>
     </div>
   )
 }
