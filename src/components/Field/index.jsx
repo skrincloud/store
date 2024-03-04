@@ -11,7 +11,7 @@ function Field(props) {
   const showLabel = value === '' || focus
 
   return (
-    <div className={className}>
+    <div className={className} role="group">
       <Icon className="Field__logo" name={icon} />
       <div className="Field__container">
         {showLabel && <label className="Field__label">{label}</label>}
