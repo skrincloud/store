@@ -1,10 +1,10 @@
-.ExpandedLayout {
+.PublicLayout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.ExpandedLayout--centered {
+.PublicLayout--centered {
   align-items: center;
   justify-content: center;
 }
