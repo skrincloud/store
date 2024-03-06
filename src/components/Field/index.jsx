@@ -32,6 +32,7 @@ function Field(props) {
           onChange={onInputChange}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
+          autoComplete={type === 'password' ? 'current-password' : 'off'}
         />
       </div>
     </div>

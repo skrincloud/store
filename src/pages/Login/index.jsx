@@ -1,29 +1,10 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { client } from '../../api'
 import Field from '../../components/Field'
+import { useStore } from './store'
 
 import './Login.css'
 
 function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
-
-  async function onLogin(event) {
-    event.preventDefault()
-
-    try {
-      await client.login(email, password)
-      navigate('/')
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  function buildOnChange(setter) {
-    return (value) => setter(value)
-  }
+  const { email, password, setEmail, setPassword, onLogin } = useStore()
 
   return (
     <div className="Login">
@@ -41,7 +22,7 @@ function Login() {
           icon="email"
           label="Correo"
           defaultValue={email}
-          onChange={buildOnChange(setEmail)}
+          onChange={setEmail}
         />
         <Field
           name="password"
@@ -49,7 +30,7 @@ function Login() {
           icon="lock"
           label="Contraseña"
           defaultValue={password}
-          onChange={buildOnChange(setPassword)}
+          onChange={setPassword}
         />
 
         <button type="submit" onClick={onLogin} className="Login-form-button">
@@ -57,9 +38,9 @@ function Login() {
         </button>
       </form>
 
-      <p className="Login-form-forgot" href="">
+      <a className="Login-form-forgot" href="/login">
         Olvidé mi contraseña
-      </p>
+      </a>
 
       <p className="Login-form-register">
         ¿No tienes cuenta?&nbsp;<span>Contáctanos</span>

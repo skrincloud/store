@@ -40,10 +40,12 @@
 }
 
 .Login-form-forgot {
+  display: block;
+  color: var(--theme-primary-color);
+  font-size: var(--font-size-caption);
   padding-top: var(--size-pixel-tiny);
   text-align: center;
-  font-size: var(--font-size-caption);
-  color: var(--theme-primary-color);
+  text-decoration: none;
 }
 
 .Login-form-register {
