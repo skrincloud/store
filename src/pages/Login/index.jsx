@@ -1,4 +1,3 @@
-import { readMe } from '@directus/sdk'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { client } from '../../api'
@@ -16,7 +15,6 @@ function Login() {
 
     try {
       await client.login(email, password)
-      await client.request(readMe())
       navigate('/')
     } catch (error) {
       console.error(error)
