@@ -1,37 +1,13 @@
 // @ts-check
 
+import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import ProtectedLayout from '../layouts/ProtectedLayout'
-import PublicLayout from '../layouts/PublicLayout'
-import Home from '../pages/Home'
-import Login from '../pages/Login'
-import Settings from '../pages/Settings'
+import { routes } from './routes'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    Component: ProtectedLayout,
-    children: [
-      {
-        path: '',
-        Component: Home,
-      },
-      {
-        path: 'settings',
-        Component: Settings,
-      },
-    ],
-  },
-  {
-    path: '/login',
-    Component: PublicLayout,
-    children: [
-      {
-        path: '',
-        Component: Login,
-      },
-    ],
-  },
-])
+const router = createBrowserRouter(routes)
 
-export { router, RouterProvider }
+function Router() {
+  return React.createElement(RouterProvider, { router })
+}
+
+export default Router
