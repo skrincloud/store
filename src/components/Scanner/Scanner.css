@@ -1,0 +1,14 @@
+.Scanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--theme-surface-color);
+  margin-top: 20px;
+  padding: var(--size-large);
+  border-radius: var(--border-radius-normal);
+}
+
+.Scanner__text {
+  font-size: var(--size-pixel-norma);
+  color: var(--theme-hint-color);
+}

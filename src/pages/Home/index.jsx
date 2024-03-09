@@ -1,18 +1,14 @@
 import Dropdown from '../../components/Dropdown'
 import Header from '../../components/Header'
 import Icon from '../../components/Icon'
+import Scanner from '../../components/Scanner'
 import './Home.css'
 function Home() {
   return (
     <div className="Home">
       <Header />
       <Dropdown />
-
-      <section className="Home__scanner">
-        <Icon name="photo_camera" color="hint"></Icon>
-        <p>Toca para activar el escaner</p>
-      </section>
-
+      <Scanner />
       <section className="Home__products">
         <div className="Home__quantity__products">
           <p>4 productos seleccionados</p>

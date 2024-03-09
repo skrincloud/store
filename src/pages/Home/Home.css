@@ -7,25 +7,6 @@
   max-height: 100vh;
 }
 
-.Home__scanner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--theme-surface-color);
-  margin-top: 20px;
-  padding: var(--size-large);
-  border-radius: var(--border-radius-normal);
-}
-
-.Home__scanner svg {
-  fill: var(--theme-hint-color);
-}
-
-.Home__scanner p {
-  font-size: var(--size-pixel-norma);
-  color: var(--theme-hint-color);
-}
-
 .Home__products {
   margin-top: 36px;
   display: flex;
