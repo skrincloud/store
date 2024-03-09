@@ -6,19 +6,3 @@
   height: 100vh;
   max-height: 100vh;
 }
-
-.Home__price__products {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.Home__price__products p {
-  font-size: var(--size-pixel-normal);
-  color: var(--theme-hint-color);
-}
-
-.Home__price__products span {
-  font-size: var(--size-pixel-huge);
-  font-weight: var(--font-weight-bold);
-}

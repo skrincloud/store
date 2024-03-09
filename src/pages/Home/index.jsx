@@ -1,3 +1,4 @@
+import Details from '../../components/Details'
 import Dropdown from '../../components/Dropdown'
 import Header from '../../components/Header'
 import ProductList from '../../components/ProductList'
@@ -10,10 +11,7 @@ function Home() {
       <Dropdown />
       <Scanner />
       <ProductList />
-      <div className="Home__price__products">
-        <p>Toca un producto para editarlo</p>
-        <span>S/ 39.00</span>
-      </div>
+      <Details />
     </div>
   )
 }

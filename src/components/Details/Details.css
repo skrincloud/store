@@ -1,0 +1,15 @@
+.Details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Details__text {
+  font-size: var(--size-pixel-normal);
+  color: var(--theme-hint-color);
+}
+
+.Details__price {
+  font-size: var(--size-pixel-huge);
+  font-weight: var(--font-weight-bold);
+}
