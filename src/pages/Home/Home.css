@@ -7,32 +7,6 @@
   max-height: 100vh;
 }
 
-.Home__client {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--theme-surface-color);
-  margin-top: 36px;
-  padding: var(--size-pixel-small);
-  border-radius: var(--border-radius-normal);
-}
-
-.Home__client__icon {
-  fill: var(--theme-font-color);
-}
-
-.Home__client div {
-  display: flex;
-  align-items: center;
-  gap: var(--size-pixel-small);
-}
-
-.Home__client__add {
-  border: none;
-  background-color: transparent;
-  padding: var(--size-pixel-small) 0;
-}
-
 .Home__scanner {
   display: flex;
   flex-direction: column;

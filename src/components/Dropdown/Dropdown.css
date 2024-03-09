@@ -1,0 +1,25 @@
+.Dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--theme-surface-color);
+  margin-top: 36px;
+  padding: var(--size-pixel-small);
+  border-radius: var(--border-radius-normal);
+}
+
+.Dropdown__icon {
+  fill: var(--theme-font-color);
+}
+
+.Dropdown div {
+  display: flex;
+  align-items: center;
+  gap: var(--size-pixel-small);
+}
+
+.Dropdown__button {
+  border: none;
+  background-color: transparent;
+  padding: var(--size-pixel-small) 0;
+}

@@ -1,20 +1,12 @@
+import Dropdown from '../../components/Dropdown'
+import Header from '../../components/Header'
 import Icon from '../../components/Icon'
 import './Home.css'
-
-import Header from '../../components/Header'
 function Home() {
   return (
     <div className="Home">
       <Header />
-      <section className="Home__client">
-        <div>
-          <Icon name="person"></Icon>
-          <p className="Home__client__text">El hijo de don app</p>
-        </div>
-        <button className="Home__client__add">
-          <Icon name="add"></Icon>
-        </button>
-      </section>
+      <Dropdown />
 
       <section className="Home__scanner">
         <Icon name="photo_camera" color="hint"></Icon>
