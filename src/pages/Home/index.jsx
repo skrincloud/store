@@ -1,34 +1,11 @@
 import Icon from '../../components/Icon'
 import './Home.css'
+
+import Header from '../../components/Header'
 function Home() {
-  // const [products, setProducts] = useState([])
-
-  // async function fetchItems() {
-  //   try {
-  //     const items = await client.request(readItems('products'))
-  //     setProducts(items)
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetchItems()
-  // }, [])
-
   return (
     <div className="Home">
-      <section className="Home__profile">
-        <p className="Home__title">Mi cielito</p>
-        <div>
-          <p className="Home__name">Luis Barboza</p>
-          <img
-            className="Home__img"
-            src="https://img.freepik.com/foto-gratis/collage-fondo-programacion_23-2149901782.jpg?w=996&t=st=1709668841~exp=1709669441~hmac=115e1de9393fffe964ebf0bd2fc31b12602b03077f87a6fd6306c1103629e657"
-            alt=""
-          />
-        </div>
-      </section>
+      <Header />
       <section className="Home__client">
         <div>
           <Icon name="person"></Icon>

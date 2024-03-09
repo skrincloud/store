@@ -7,33 +7,6 @@
   max-height: 100vh;
 }
 
-.Home__img {
-  width: var(--size-large);
-  height: var(--size-large);
-  border-radius: 50%;
-}
-
-.Home__profile {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.Home__profile div {
-  display: flex;
-  align-items: center;
-  gap: var(--size-pixel-small);
-}
-
-.Home__title {
-  font-size: var(--font-size-headline);
-  font-weight: var(--font-weight-bold);
-}
-
-.Home__name {
-  font-size: var(--font-size-caption);
-}
-
 .Home__client {
   display: flex;
   align-items: center;
