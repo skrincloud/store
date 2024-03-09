@@ -20,10 +20,16 @@ function ProtectedLayout() {
     }
   }, [navigate, setUser])
 
+  async function onLogout() {
+    client.logout()
+    client.setToken(null)
+    navigate('/login')
+  }
+
   return (
     <div className={className}>
       <Outlet />
-      <button onClick={() => client.logout()}>Logout</button>
+      <button onClick={onLogout}>Logout</button>
     </div>
   )
 }

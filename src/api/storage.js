@@ -1,6 +1,6 @@
 // @ts-check
 
-const STORAGE_KEY = 'directus-storage'
+export const STORAGE_KEY = 'directus-storage'
 
 /**
  * @typedef {import("@directus/sdk").AuthenticationData} AuthenticationData
