@@ -1,36 +1,17 @@
-import { readItems } from '@directus/sdk'
-import { useEffect, useState } from 'react'
-import { client } from '../../api'
-
+import Details from '../../components/Details'
+import Dropdown from '../../components/Dropdown'
+import Header from '../../components/Header'
+import ProductList from '../../components/ProductList'
+import Scanner from '../../components/Scanner'
+import './Home.css'
 function Home() {
-  const [products, setProducts] = useState([])
-
-  async function fetchItems() {
-    try {
-      const items = await client.request(readItems('products'))
-      setProducts(items)
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  useEffect(() => {
-    fetchItems()
-  }, [])
-
   return (
-    <div>
-      <h1>Productos</h1>
-
-      {products &&
-        products.map((product) => (
-          <div key={product.id}>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-          </div>
-        ))}
-
-      <p> Puede seleccionar los productos para agregarlos a la compra </p>
+    <div className="Home">
+      <Header />
+      <Dropdown />
+      <Scanner />
+      <ProductList />
+      <Details />
     </div>
   )
 }
