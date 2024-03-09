@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   background-color: var(--theme-surface-color);
-  margin-top: 20px;
   padding: var(--size-large);
   border-radius: var(--border-radius-normal);
 }

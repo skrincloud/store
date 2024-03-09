@@ -64,5 +64,6 @@ body {
 body,
 input,
 button {
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: var(--font-size-normal);
 }

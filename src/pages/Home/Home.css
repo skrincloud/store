@@ -1,6 +1,7 @@
 .Home {
   padding: 36px;
   display: flex;
+  gap: var(--size-large);
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
