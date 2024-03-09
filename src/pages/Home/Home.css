@@ -7,43 +7,6 @@
   max-height: 100vh;
 }
 
-.Home__products {
-  margin-top: 36px;
-  display: flex;
-  flex: auto;
-  flex-direction: column;
-}
-
-.Home__quantity__products {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.Home__quantity__products button {
-  border: none;
-  padding: var(--size-pixel-normal) var(--size-pixel-large);
-  border-radius: var(--border-radius-normal);
-  background-color: var(--theme-primary-color);
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--theme-background-color);
-}
-
-.Home__product__list {
-  margin-top: 36px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-pixel-small);
-  overflow-y: scroll;
-  height: calc(100vh - 32rem);
-}
-
-.Home__product__list div {
-  display: flex;
-  justify-content: space-between;
-}
-
 .Home__price__products {
   display: flex;
   align-items: center;
