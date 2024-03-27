@@ -1,11 +1,20 @@
-import Icon from '../../components/Icon'
+import { useState } from 'react';
+import Html5QrcodePlugin from "./Html5QrcodePlugin"
 import './Scanner.css'
 
 function Scanner() {
+  const [barDecoded, setBarDecoded] = useState('initialState')
+
+  const onNewScanResult = (decodedText) => {
+    setBarDecoded(decodedText)
+    console.log(barDecoded)
+  };
+
   return (
     <section className="Scanner">
-      <Icon name="photo_camera" color="hint"></Icon>
-      <p className="Scanner__text">Toca para activar el escaner</p>
+      <Html5QrcodePlugin
+          qrCodeSuccessCallback={onNewScanResult}
+        />
     </section>
   )
 }
