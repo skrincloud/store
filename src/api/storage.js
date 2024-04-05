@@ -6,7 +6,7 @@ export const STORAGE_KEY = 'directus-storage'
  * @typedef {import("@directus/sdk").AuthenticationData} AuthenticationData
  */
 
-class LocalStorage {
+class AuthLocalStorage {
   get() {
     const data = localStorage.getItem(STORAGE_KEY)
     return data ? JSON.parse(data) : null
@@ -19,8 +19,21 @@ class LocalStorage {
   }
 }
 
-export const storage = new LocalStorage()
+export const authStorage = new AuthLocalStorage()
 
 export function readToken() {
-  return storage.get()?.access_token || null
+  return authStorage.get()?.access_token || null
 }
+
+class LocalStorage {
+  set(key, data) {
+    localStorage.setItem(key, JSON.stringify(data))
+  }
+
+  get(key) {
+    const data = localStorage.getItem(key)
+    return data ? JSON.parse(data) : []
+  }
+}
+
+export const storage = new LocalStorage()

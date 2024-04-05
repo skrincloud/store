@@ -1,34 +1,39 @@
+import { useState } from 'react'
+import { getProductByCode } from '../../api/product/getProductByCode'
+import { storage } from '../../api/storage'
 import Icon from '../../components/Icon'
 import './ProductList.css'
 
-const products = [
-  {
-    id: 1,
-    name: 'Azucar',
-    price: 5,
-  },
-  {
-    id: 2,
-    name: 'Azucar',
-    price: 5,
-  },
-  {
-    id: 3,
-    name: 'Azucar',
-    price: 5,
-  },
-  {
-    id: 4,
-    name: 'Azucar',
-    price: 5,
-  },
-]
-
 function ProductList() {
+  const [input, setInput] = useState('')
+  const [products, setProducts] = useState(storage.get('products'))
+  const quantity = products.length
+
+  function onChange(event) {
+    setInput(event.target.value)
+  }
+  async function onSearchClick() {
+    const scannedProduct = await getProductByCode(input)
+    if (scannedProduct) {
+      const productFound = products.some(
+        (product) => product.id === scannedProduct.id,
+      )
+      if (!productFound) {
+        setProducts([...products, scannedProduct])
+        storage.set('products', [...products, scannedProduct])
+      }
+    }
+    setInput('')
+  }
+
   return (
     <section className="ProductList">
+      <div>
+        <input type="text" onChange={onChange} value={input} />
+        <button onClick={onSearchClick}>search</button>
+      </div>
       <div className="ProductList__quantity">
-        <p>4 productos seleccionados</p>
+        <p> {quantity} productos seleccionados</p>
         <button>
           <Icon name="check" color="background"></Icon>
         </button>
