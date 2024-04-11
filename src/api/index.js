@@ -2,12 +2,12 @@
 
 import { authentication, createDirectus, rest } from '@directus/sdk'
 import { fetch } from './fetch'
-import { storage } from './storage'
+import { authStorage } from './storage'
 
 const url = 'https://store.itmarck.com'
 
 export const client = createDirectus(url, { globals: { fetch } })
-  .with(authentication('json', { storage }))
+  .with(authentication('json', { storage: authStorage }))
   .with(rest())
 
 export function buildImageUrl(imageId) {
