@@ -52,6 +52,9 @@
   --transition-normal: all 300ms ease-in-out;
   --transition-slow: all 600ms ease-in-out;
   --transition-slower: all 1000ms ease-in-out;
+
+  --scanner-width: 640px;
+  --scanner-height: 480px;
 }
 
 body {

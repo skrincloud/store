@@ -12,3 +12,21 @@
   font-size: var(--size-pixel-norma);
   color: var(--theme-hint-color);
 }
+
+
+
+.Scanner__source {
+  width: var(--scanner-width);
+  height: var(--scanner-height);
+}
+
+
+.Scanner__source canvas, video {
+  float: left;
+  width: var(--scanner-width);
+  height: var(--scanner-height);
+}
+
+.Scanner__source canvas.drawingBuffer, video.drawingBuffer {
+  margin-left: -var(--scanner-width);
+}
