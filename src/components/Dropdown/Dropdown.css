@@ -1,25 +1,27 @@
 .Dropdown {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--theme-surface-color);
   margin-top: 36px;
-  padding: var(--size-pixel-small);
   border-radius: var(--border-radius-normal);
 }
 
-.Dropdown__icon {
-  fill: var(--theme-font-color);
-}
-
-.Dropdown div {
+.Field__container {
   display: flex;
-  align-items: center;
   gap: var(--size-pixel-small);
+  filter: drop-shadow(0 0 4px #0d1117);
+  z-index: 1;
 }
 
-.Dropdown__button {
-  border: none;
-  background-color: transparent;
-  padding: var(--size-pixel-small) 0;
+.Dropdown__container {
+  background-color: var(--theme-surface-color);
+  padding: var(--size-pixel-small);
+  border-radius: 0 0 var(--border-radius-normal) var(--border-radius-normal);
+  position: absolute;
+  top: 92%;
+  width: 100%;
+  filter: drop-shadow(0 0 8px #0d1117);
+  padding: 1rem 2rem;
 }

@@ -5,12 +5,14 @@ import { storage } from '../api/storage'
 
 export const userAtom = atom(null)
 export const productsAtom = atom(storage.get('products'))
+export const customersAtom = atom(storage.get('customers'))
 
 export function useGlobalStore() {
   const user = useAtomValue(userAtom)
   const setUser = useSetAtom(userAtom)
   const products = useAtomValue(productsAtom)
   const setProducts = useSetAtom(productsAtom)
+  const customers = useAtomValue(customersAtom)
 
   const addProduct = (payload) => {
     const productFound = products.some((product) => product.id === payload.id)
@@ -34,5 +36,6 @@ export function useGlobalStore() {
     products,
     addProduct,
     deleteProduct,
+    customers,
   }
 }
