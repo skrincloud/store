@@ -7,14 +7,14 @@ export function setOnRead(onRead) {
 export async function startQuagga() {
   await navigator.mediaDevices
     .getUserMedia({ video: true })
-  const deviceId = await getCameraId();
+  const camera = await getCamera();
   Quagga.init({
     inputStream: {
       name: "Live",
       type: "LiveStream",
       target: document.querySelector('#scanner-source'),
       constraints: {
-        deviceId
+        deviceId: camera.deviceId,
       }
     },
     locator: {
@@ -29,6 +29,7 @@ export async function startQuagga() {
     }
   }, function (err) {
     if (err) {
+      alert(`Error al iniciar tu camara  ${camera.label} \n ${err}`);
       console.log(err);
       return
     }
@@ -36,8 +37,9 @@ export async function startQuagga() {
   });
 }
 
-async function getCameraId() {
+async function getCamera() {
   const videoDevices = await navigator.mediaDevices.enumerateDevices();
   const filterDevices = videoDevices.filter(device => !!device.deviceId && device.kind === 'videoinput');
-  return filterDevices[filterDevices.length - 1].deviceId;
+  console.log(filterDevices);
+  return filterDevices[filterDevices.length - 1];
 }
