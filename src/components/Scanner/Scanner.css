@@ -2,13 +2,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--theme-surface-color);
   margin-top: 20px;
-  padding: var(--size-large);
+  padding: var(--size-small);
   border-radius: var(--border-radius-normal);
+  height: 200px;
 }
 
 .Scanner__text {
   font-size: var(--size-pixel-norma);
   color: var(--theme-hint-color);
+}
+
+
+
+.Scanner__source {
+  width: var(--scanner-width);
+  height: var(--scanner-height);
+  position: relative;
+}
+
+
+.Scanner__source canvas, video {
+  float: left;
+  width: var(--scanner-width);
+  height: var(--scanner-height);
+  display: block;
+  position: absolute;
+  top:0; left:0;
+}
+
+.Scanner__source canvas {
+  position:relative;
+  transform: scale(-1, 1);
+}
+
+.Scanner__source video {
+  object-fit: cover;
+  border-radius: var(--border-radius-normal);
 }
